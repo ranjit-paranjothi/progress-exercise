@@ -8,6 +8,11 @@
 	/*width:100px;*/
 }
 
+.percentage{
+	
+	vertical-align:"middle"
+}
+
 .Bar-width{
 	width:300px;
 }

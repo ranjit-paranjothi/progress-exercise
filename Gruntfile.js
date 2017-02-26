@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     eslint: {
       target: [        
         'dev/**/*.js',
-        'tests/**/*.js',
+        '__tests__/**/*.js',
       ]
     },
     jest: {
@@ -41,6 +41,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jest');
 
   grunt.registerTask('lint', ['eslint']);
+  grunt.registerTask('test', ['jest']);
   // Default task.
   grunt.registerTask('default', ['webpack', 'uglify', 'eslint', 'jest']);
 
