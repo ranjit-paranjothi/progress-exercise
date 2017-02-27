@@ -1,22 +1,25 @@
 import React from "react";
+import {observer} from "mobx-react";
 
+@observer
 export default class Progress extends React.Component{
 	
 	constructor(props){
 		super(props);
-		this.state = {value:0, progressColor:""};
-		//this.store = new ProgressStore();
 	}
 
-	componentDidMount(){
-		console.log("Progress:: componentDidMount");
-		//this.store.value = this.props.value;		
+	getProgressState(){
+		var pWidth = (this.props.store.value>=100)?this.props.w:(this.props.store.value*(this.props.w/100));
+		var color = (this.props.store.value>=100)?this.props.beyondLimitColor:this.props.limitColor;
+		return {w:pWidth, color:color};
 	}
 
 	render(){
-		console.log("MEEEEEE: ",this.props.value);
+		console.log("MEEEEEE: ",this.props.store.value);
+
+		var progressState = this.getProgressState();
 		var progressColor = {
-			backgroundColor: this.state.progressColor
+			backgroundColor: progressState.color
 		};
 		var overlapStyle = {			
 			marginTop:"-"+(this.props.h)+"px",
@@ -33,12 +36,15 @@ export default class Progress extends React.Component{
 		var barWidth = {
 			width: this.props.w+"px"
 		};
+		var calculatedWidth = {
+			width: progressState.w+"px"
+		};
 
 		return (
 			<div style={barWidth}>
 				<div className="Outer-bar" style={barHeight}>
-					<div className="Inner-bar" style={Object.assign({}, barHeight, barWidth, progressColor)}></div>
-					<div className="percentage" style={Object.assign({}, overlapStyle, barHeight, barWidth)}>{this.props.value+"%"}</div>
+					<div className="Inner-bar" style={Object.assign({}, barHeight, calculatedWidth, progressColor)}></div>
+					<div className="percentage" style={Object.assign({}, overlapStyle, barHeight, barWidth)}>{this.props.store.value+"%"}</div>
 				</div>
 			</div>
 		);

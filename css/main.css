@@ -5,6 +5,9 @@
 
 .Inner-bar{
 	background-color: orange;
+	-webkit-transition-property: width;
+    transition-property: width;
+    transition-duration: 2s;
 	/*width:100px;*/
 }
 

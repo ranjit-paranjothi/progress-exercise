@@ -1,16 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Bars from "./Bars";
-import barStore from "./BarStore";
+// import barStore from "./BarStore";
 import Controls from "./Controls";
-//import $ from "../lib/jquery";
+import ProgressStore from "./ProgressStore";
+import $ from "../lib/jquery";
 
-//var items = [{value:100},{value:68}];
+var progressBarItems = [];
+var progressStoreArr = [];
 
-barStore.progressBarItems = [{value:2},{value:100}];
-ReactDOM.render(
-	<div>
-	<Bars store={barStore}/>
-	<Controls store={barStore}/>
-	</div>,
-	document.getElementById("container"));
+var endPointPromise = new Promise(function(resolve, reject){
+	$.ajax({url:"http://pb-api.herokuapp.com/bars"}).done(function(res){
+		resolve(res);
+	});
+});
+
+endPointPromise.then(function(res){
+	progressBarItems = res.bars;
+
+	for(let i=0; i<progressBarItems.length;i++){
+		let curStore = new ProgressStore;
+		curStore.value = progressBarItems[i];
+		progressStoreArr.push(curStore);
+	}
+
+	ReactDOM.render(
+		<div>
+			<Bars progressStoreArr = {progressStoreArr}/>
+			<Controls progressStoreArr = {progressStoreArr}/>
+		</div>,
+		document.getElementById("container"));
+});
+
+
+

@@ -1,9 +1,9 @@
 import React from "react";
 import Progress from "./Progress";
-import {observer} from "mobx-react";
+//import {observer} from "mobx-react";
 //import ProgressStore from "./ProgressStore";
 
-@observer
+//@observer
 export default class Bars extends React.Component{
 	
 	render(){
@@ -11,13 +11,12 @@ export default class Bars extends React.Component{
 		var barsArr = [];
 		var limitColor = "orange";
 		var beyondLimitColor = "red";
-		console.log("YYYYYYY: ",this.props.store);
-		for(let i=0; i<this.props.store.progressBarItems.length;i++){
-			/*var curStore = new ProgressStore;
-			curStore.value = this.props.store.progressBarItems[i].value;*/
-			console.log("VALLLLLL : ",this.props.store.progressBarItems[i].value);
+		//console.log("YYYYYYY: ",this.props.progressStoreArr[0]);
+		for(let i=0; i<this.props.progressStoreArr.length;i++){
+			var curStore = this.props.progressStoreArr[i];
+			console.log("VALLLLLL : ",curStore.value);
 			//storeArr.push(curStore);
-			barsArr.push(<Progress value={this.props.store.progressBarItems[i].value} w="250" h= "40" limitColor={limitColor} beyondLimitColor={beyondLimitColor} key={i}/>);
+			barsArr.push(<Progress store={curStore} w="250" h= "40" limitColor={limitColor} beyondLimitColor={beyondLimitColor} key={i}/>);
 		}
 		//window.storeArr = storeArr;
 		return (
