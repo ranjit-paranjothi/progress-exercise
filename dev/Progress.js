@@ -9,13 +9,11 @@ export default class Progress extends React.Component{
 	}
 
 	getProgressState(){
-		var pWidth = (this.props.store.value>=100)?this.props.w:(this.props.store.value*(this.props.w/100));
-		var color = (this.props.store.value>=100)?this.props.beyondLimitColor:this.props.limitColor;
-		return {w:pWidth, color:color};
+		var color = (this.props.store.value>100)?this.props.beyondLimitColor:this.props.limitColor;
+		return {color:color};
 	}
 
 	render(){
-		console.log("MEEEEEE: ",this.props.store.value);
 
 		var progressState = this.getProgressState();
 		var progressColor = {
@@ -25,7 +23,6 @@ export default class Progress extends React.Component{
 			marginTop:"-"+(this.props.h)+"px",
 			lineHeight:this.props.h+"px",
 			textAlign: "center",
-			position: "absolute",
 			zIndex: "100",
 		};
 
@@ -33,26 +30,21 @@ export default class Progress extends React.Component{
 			height:this.props.h+"px"
 		};
 
-		var barWidth = {
-			width: this.props.w+"px"
+		var fixedWidth = {
+			width: "100%"
 		};
+
 		var calculatedWidth = {
-			width: progressState.w+"px"
+			width: this.props.store.value+"%"
 		};
 
 		return (
-			<div style={barWidth}>
-				<div className="Outer-bar" style={barHeight}>
+			<div className = "progressBar" style={fixedWidth}>
+				<div className="Outer-bar" style={fixedWidth}>
 					<div className="Inner-bar" style={Object.assign({}, barHeight, calculatedWidth, progressColor)}></div>
-					<div className="percentage" style={Object.assign({}, overlapStyle, barHeight, barWidth)}>{this.props.store.value+"%"}</div>
+					<div className="percentage" style={Object.assign({}, overlapStyle, barHeight, fixedWidth)}>{this.props.store.value+"%"}</div>
 				</div>
 			</div>
 		);
 	}
 }
-
-/*Progress.proptypes = {
-	value:React.PropTypes.number,
-	w:React.PropTypes.number,
-	h:React.PropTypes.number
-};*/

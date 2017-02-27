@@ -17,10 +17,17 @@ module.exports = function(grunt) {
         dest:'./build/bundle.min.js'
       }
     },
-    /*watch: {
-      files: ['<%= eslint.src %>'],
-      tasks: ['eslint']
-    },*/
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: './css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'build/css',
+          ext: '.min.css'
+        }]
+      }
+    },
     eslint: {
       target: [        
         'dev/**/*.js',
@@ -36,6 +43,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-jest');
@@ -43,6 +51,6 @@ module.exports = function(grunt) {
   grunt.registerTask('lint', ['eslint']);
   grunt.registerTask('test', ['jest']);
   // Default task.
-  grunt.registerTask('default', ['webpack', 'uglify', 'eslint', 'jest']);
+  grunt.registerTask('default', ['webpack', 'uglify', 'cssmin', 'eslint', 'jest']);
 
 };
