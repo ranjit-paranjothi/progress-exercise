@@ -2,7 +2,6 @@ import {observable, action} from "mobx";
 
 class ProgressStore{
 	@observable value = 0;
-	@observable barColor = "";
 	@observable minLimit = 0;
 	@observable maxLimit = 0;
 

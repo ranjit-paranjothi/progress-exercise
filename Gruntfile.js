@@ -50,6 +50,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('lint', ['eslint']);
   grunt.registerTask('test', ['jest']);
+  
   // Default task.
   grunt.registerTask('default', ['webpack', 'uglify', 'cssmin', 'eslint', 'jest']);
 

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1488256679433" clover="3.2.0">
+  <project timestamp="1488256679434" name="All files">
+    <metrics statements="42" coveredstatements="42" conditionals="3200" coveredconditionals="304" methods="598" coveredmethods="110" elements="3840" coveredelements="456" complexity="0" loc="42" ncloc="42" packages="2" files="5" classes="5">
+      <package name="dev">
+        <metrics statements="39" coveredstatements="39" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="9"/>
+        <file name="Bars.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/Bars.js">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+        </file>
+        <file name="Controls.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/Controls.js">
+          <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="7" count="6" type="stmt"/>
+          <line num="8" count="6" type="stmt"/>
+          <line num="9" count="6" type="stmt"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="13" count="4" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="21" count="6" type="stmt"/>
+          <line num="22" count="6" type="stmt"/>
+          <line num="23" count="6" type="stmt"/>
+          <line num="24" count="8" type="stmt"/>
+          <line num="25" count="8" type="stmt"/>
+          <line num="27" count="6" type="stmt"/>
+          <line num="28" count="8" type="stmt"/>
+          <line num="29" count="8" type="stmt"/>
+          <line num="31" count="6" type="stmt"/>
+        </file>
+        <file name="Progress.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/Progress.js">
+          <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="12" count="3" type="stmt"/>
+          <line num="13" count="3" type="stmt"/>
+          <line num="18" count="3" type="stmt"/>
+          <line num="19" count="3" type="stmt"/>
+          <line num="22" count="3" type="stmt"/>
+          <line num="29" count="3" type="stmt"/>
+          <line num="33" count="3" type="stmt"/>
+          <line num="37" count="3" type="stmt"/>
+          <line num="41" count="3" type="stmt"/>
+        </file>
+        <file name="ProgressStore.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/ProgressStore.js">
+          <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+          <line num="10" count="4" type="stmt"/>
+          <line num="11" count="4" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="3" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="lib">
+        <metrics statements="3" coveredstatements="3" conditionals="3194" coveredconditionals="299" methods="589" coveredmethods="101"/>
+        <file name="jquery.js" path="/Users/Ranjit/tech/gitRepo/react_version/lib/jquery.js">
+          <metrics statements="3" coveredstatements="3" conditionals="3194" coveredconditionals="299" methods="589" coveredmethods="101"/>
+          <line num="2" count="153" type="stmt"/>
+          <line num="3" count="30" type="stmt"/>
+          <line num="4" count="22" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
