@@ -1,6 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import Progress from "../dev/Progress";
-import {shallow} from "enzyme";
+import {shallow, mount} from "enzyme";
 /*import chai from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 
@@ -30,8 +31,8 @@ test("should have progress percentage text",()=>{
 	expect(progressWrapper.find(".Inner-bar").exists()).toEqual(true);
 });
 
-/*test("received store value and progress bar width should match",()=>{
+test("received store value and progress bar width should match",()=>{
 	var store = {value:30};
-	const progressWrapper= shallow(<Progress store={store}/>);
-	expect(Progress).to.have.style("width", "30%");
-});*/
+	const progressWrapper= mount(<Progress store={store}/>);
+	expect(progressWrapper.find(".Inner-bar").node.style.width).toEqual("30%");
+});
