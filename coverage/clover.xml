@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1488256679433" clover="3.2.0">
-  <project timestamp="1488256679434" name="All files">
+<coverage generated="1488476666331" clover="3.2.0">
+  <project timestamp="1488476666331" name="All files">
     <metrics statements="42" coveredstatements="42" conditionals="3200" coveredconditionals="304" methods="598" coveredmethods="110" elements="3840" coveredelements="456" complexity="0" loc="42" ncloc="42" packages="2" files="5" classes="5">
       <package name="dev">
         <metrics statements="39" coveredstatements="39" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="9"/>
@@ -35,16 +35,16 @@
         </file>
         <file name="Progress.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/Progress.js">
           <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
-          <line num="8" count="3" type="stmt"/>
-          <line num="12" count="3" type="stmt"/>
-          <line num="13" count="3" type="stmt"/>
-          <line num="18" count="3" type="stmt"/>
-          <line num="19" count="3" type="stmt"/>
-          <line num="22" count="3" type="stmt"/>
-          <line num="29" count="3" type="stmt"/>
-          <line num="33" count="3" type="stmt"/>
-          <line num="37" count="3" type="stmt"/>
-          <line num="41" count="3" type="stmt"/>
+          <line num="8" count="4" type="stmt"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="13" count="4" type="stmt"/>
+          <line num="18" count="4" type="stmt"/>
+          <line num="19" count="4" type="stmt"/>
+          <line num="22" count="4" type="stmt"/>
+          <line num="29" count="4" type="stmt"/>
+          <line num="33" count="4" type="stmt"/>
+          <line num="37" count="4" type="stmt"/>
+          <line num="41" count="4" type="stmt"/>
         </file>
         <file name="ProgressStore.js" path="/Users/Ranjit/tech/gitRepo/react_version/dev/ProgressStore.js">
           <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
