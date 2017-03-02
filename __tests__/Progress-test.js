@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Progress from "../dev/Progress";
 import {shallow, mount} from "enzyme";
 

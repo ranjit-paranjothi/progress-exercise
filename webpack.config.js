@@ -6,7 +6,7 @@ var BUILD = path.resolve(__dirname, 'build');
 
 var config = {
 
-	entry: DEV+"/index.js",
+	entry: ['babel-polyfill', DEV+'/index.js'],
 	output:{
 		path:BUILD,
 		filename: 'bundle.js'
@@ -14,9 +14,27 @@ var config = {
 	module:{
 		loaders:[{
 			include:DEV,
-			loader: 'babel-loader'
+			loader: 'babel-loader',
+			query:{
+				"presets": [
+			      "es2015",
+			      "react",
+			      'stage-0'
+			    ],
+				"plugins": [
+			      "transform-decorators-legacy",
+			      "transform-class-properties",
+			      "transform-es2015-modules-amd"
+			    ]
+			}
 		}]
-	}
+	},
+	plugins:[	new webpack.DefinePlugin({
+					'process.env':{
+						NODE_ENV:'"production"'
+					}
+				}),
+				new webpack.optimize.UglifyJsPlugin()]
 };
 
 module.exports = config;
