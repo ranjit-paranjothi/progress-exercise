@@ -2,16 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Progress from "../dev/Progress";
 import {shallow, mount} from "enzyme";
-/*import chai from 'chai';
-import chaiEnzyme from 'chai-enzyme';
-
-global.chai = chai;
-global.mount = mount;
-global.React = React;
-global.render = render;
-global.shallow = shallow;
-
-chai.use(chaiEnzyme());*/
 
 test("should contain fixed outer rectangle ",()=>{
 	var store = {value:30};
