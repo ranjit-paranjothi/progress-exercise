@@ -12,11 +12,13 @@ var maxLimit = 0;
 
 var endPointPromise = new Promise(function(resolve, reject){
 
-	$.ajax({url:"http://pb-api.herokuapp.com/bars", dataType:"jsonp",
+	$.ajax({url:"https://pb-api.herokuapp.com/bars",
 		success:function(res){
 			resolve(res);
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
+			console.log(ajaxOptions);
+			console.log(thrownError);
 			reject();
 		}
 	});
